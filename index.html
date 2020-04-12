@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            display: none;
+            width: 300px;
+            height: 300px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>致学生的一封信</h1>
+    <span>请输入姓名:</span>
+    <input type="text" id="username" name="" id="" value="张三"><br><br>
+    <input type="button" id="btn" value="点击查看"><br><br>
+    <div id="content">
+        亲爱的<span id="showName"></span>: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;信的正文
+    </div>
+
+    <script src="./jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').on('click',function(){
+                var username = $('#username').val().trim();
+                if(username == ""){
+                    alert('请输入姓名');
+                    return;
+                }
+                $('#showName').text(username);
+                $('#content').show();
+            })
+
+        });
+    </script>
+</body>
+</html>
